@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Food Rescue</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+    <h1>Food Rescue</h1>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="request.html">Request</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<section id="donate">
+    <h2>Donate Food</h2>
+    <form id="donateForm">
+        <label for="restaurantName">Restaurant Name:</label>
+        <input type="text" id="restaurantName" required>
+
+        <label for="foodType">Food Type:</label>
+        <input type="text" id="foodType" required>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" required>
+
+        <label for="pickupTime">Pickup Time:</label>
+        <input type="datetime-local" id="pickupTime" required>
+
+        <button type="submit">Submit Donation</button>
+    </form>
+</section>
+
+<footer>
+    <p>Built to fight hunger</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
