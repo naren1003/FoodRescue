@@ -1,21 +1,109 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family:Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
     margin : 0;
     padding: 0;
 }
 
+/* top-bar */
+
 nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: white;
+    padding: 0px 10px;
+    box-shadow: 0px 0px 10px grey;
+}
+
+.links{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #ff6347;
-    padding: 15px 30px;
 }
 
-nav h1 { color: white; }
-nav ul { display: flex; list-style: none; gap: 20px; }
-nav ul li a { color: white; text-decoration: none; }
+.fa-solid.fa-utensils{
+    border: 1px solid hsl(158 64% 32%);
+    padding: 7px;
+    border-radius: 10px;
+    background-color: hsl(158 64% 32%);
+    color: white;
+}
 
+nav .logo a{
+    text-decoration: none;
+}
+
+.name-first{color: black;}
+.name-second{ color: hsl(158 64% 32%);}
+nav ul { display: flex; list-style: none; gap: 20px; }
+nav ul li a {
+  color: hsl(160 15% 45%);
+  text-decoration: none;
+  padding: 8px 16px;
+  display: inline-block;
+  border-radius: 6px;
+}
+
+nav ul li a:hover {
+  color: black;
+  background-color: hsl(157 17% 73%);
+}
+
+nav ul li a.active {
+  color: white;
+  background-color: hsl(158 64% 32%);
+}
+
+.top-bar .login .sign-in{
+    padding: 8px 16px;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    border: 0px;
+    font-size: medium;
+}
+
+.top-bar .login .sign-in:hover{
+    padding: 8px 16px;
+    text-decoration: none;
+    color: white;
+    background-color: hsl(174 72% 40%);
+    border-radius: 6px;
+}
+
+.top-bar .login .get-started{
+    padding: 8px 16px;
+    text-decoration: none;
+    color: white;
+    background-color: hsl(158 64% 32%);
+    border: 0px;
+    border-radius: 6px;
+    font-size: medium;
+}
+
+.top-bar .login .get-started:hover{
+    background-color: hsl(158, 42%, 38%);
+}
+
+
+/* section 1 index page */
+.section-1 {
+    display: flex;
+    justify-content: center;
+    background-color:  hsl(153, 39%, 95%);
+}
+
+.section-1 .quote{
+    border-radius: 999px;
+    display: inline-flex;
+    padding: 8px 16px;
+    margin:10px 0px 24px;
+    background-color: #1D86601A;
+    color: hsl(158 64% 32%);
+    align-items: center;
+}
+
+/* 
 .middleSec{
     display: flex;
     justify-content: space-around;
@@ -59,4 +147,4 @@ button { padding: 10px; background: #ff6347; color: white; border: none; cursor:
 table { width: 90%; margin: auto; border-collapse: collapse; margin-bottom: 50px; }
 th, td { padding: 10px; text-align: center; border: 1px solid #ccc; }
 
-footer { background: #333; color: white; padding: 20px; }
+footer { background: #333; color: white; padding: 20px; } */

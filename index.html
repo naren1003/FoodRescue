@@ -8,83 +8,42 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <div class="my-info">
-        <p>Name: Narendra G S</p>
-        <p>Register Number: 24BCE1284</p>
-    </div>
-    <nav>
-        <h1><i class="fa-solid fa-utensils"></i> Food Rescue</h1>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="donate.html">Donate</a></li>
-            <li><a href="request.html">Request</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- donate Section -->
-    <section id="donate">
-        <h1>Extra food today. A full stomach tonight.</h1>
-        <p>We rescue surplus food and deliver it to people who need it.</p>
-        <a href="donate.html" class="btn">
-            <i class="fa-solid fa-hand-holding-heart"></i> Donate Food
-        </a>
-        <a href="request.html" class="btn">
-            <i class="fa-solid fa-bowl-food"></i> Request Food
-        </a>
-    </section>
-
-    <div class = "middleSec">
-        <!-- Impact Stats -->
-        <section id="stats">
-            <div class="stat">
-                <i class="fa-solid fa-bowl-rice stat-icon"></i>
-                <h2>1200+</h2>
-                <p>Meals Saved</p>
+    <!-- Top-bar -->
+    <div class="top-bar">
+        <div class="my-info">
+            <p>Name: Narendra G S</p>
+            <p>Register Number: 24BCE1284</p>
+        </div>
+        <nav>
+            <div class="logo">
+                <a href="index.html" class="active">
+                    <h2>
+                        <i class="fa-solid fa-utensils"></i>
+                        <span class="name-first">Food</span>
+                        <span class="name-second"> Rescue</span>
+                    </h2>
+                </a>
             </div>
-
-            <div class="stat">
-                <i class="fa-solid fa-store stat-icon"></i>
-                <h2>30+</h2>
-                <p>Restaurants</p>
+            <div class = "links">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="donate.html">Available Food</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
             </div>
-
-            <div class="stat">
-                <i class="fa-solid fa-people-group stat-icon"></i>
-                <h2>800+</h2>
-                <p>People Fed</p>
+            <div class="login">
+                <button class="sign-in">Sign-in</button>
+                <button class = "get-started">Get Started</button>
             </div>
-        </section>
-
-
-        <!-- How it Works -->
-        <section id="how-it-works">
-            <h2>How It Works</h2>
-            <div class="step">
-                <i class="fa-solid fa-box-open step-icon"></i>
-                <h3>Collect</h3>
-                <p>We collect surplus food from restaurants.</p>
-            </div>
-
-            <div class="step">
-                <i class="fa-solid fa-shield-heart step-icon"></i>
-                <h3>Verify & Handle</h3>
-                <p>Food is checked and handled safely.</p>
-            </div>
-
-            <div class="step">
-                <i class="fa-solid fa-truck-fast step-icon"></i>
-                <h3>Distribute</h3>
-                <p>Food reaches people in need.</p>
-            </div>
-        </section>
+        </nav>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>Built to fight hunger</p>
-    </footer>
+    <!-- section 1 -->
+    <div class = "section-1">
+        <p class="quote"> <b>Fighting Hunger, Reducing Waste</b></p>
+    </div>
+    
 
     <script src="script.js"></script>
 </body>
