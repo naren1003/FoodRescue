@@ -197,11 +197,128 @@ nav ul li a.active {
     margin-bottom: 4px; 
 }
 
-.section-2 p{
+.section-2 p,.section-3 p{
     color: #628478;
     margin-top: 0; 
 }
 
+/* section-3 */
+
+.section-3{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color:  #f1f5f14c;
+    padding: 128px 16px;
+    gap:25px;
+}
+
+.section-3 .section-3-flexbox{
+    display: flex;
+    justify-content: space-around;
+}
+
+.section-3 .section-3-flexbox .section-3-flexbox-each{
+    padding: 20px;
+    border:1px solid black;
+    border-radius: 10px;
+    margin:29px;
+    gap: 10px;
+    box-shadow:  5px 5px rgba(0,0,0,0.1);
+    background-color: white;
+}
+
+.section-3 .section-3-flexbox .section-3-flexbox-each i{
+    margin-left: 15px;
+    font-size: 30px;
+    padding: 15px;
+    transition: transform 0.3s ease;
+    border-radius:15px ;
+    animation: colorFlow-bg 2s ease-in-out infinite alternate;
+}
+
+.section-3-flexbox-each:hover i {
+  transform: scale(1.1);
+}
+
+.fa-solid.fa-user, .fa-solid.fa-shield, .fa-solid.fa-arrow-trend-down{
+    border: 1px solid hsl(158 64% 32%);
+    padding: 7px;
+    border-radius: 10px;
+    background-color: hsl(158 64% 32%);
+    color: white;
+}
+
+
+/* section-4 */
+.section-4{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color:  #E8EEE84c;
+    padding: 18px 16px;
+    gap:25px;
+}
+
+.section-4 .top h3{
+    color: #628478;
+    margin-top: 0; 
+    font-weight: normal;
+}
+
+.section-4 .circles{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.section-4 .circle{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: white;
+    animation: colorFlow-bg 2s ease-in-out infinite alternate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 3px 3px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+@keyframes colorFlow-bg {
+    0% {
+        background-color: hsl(158 64% 32%);
+    }
+    100% {
+        background-color: hsl(174 72% 40%);
+    }
+}
+
+.section-4 .circles .line {
+    flex-grow: 0.2 ;           
+    height: 4px;     
+    background-color: #cfcfcf; 
+    margin: 0 10px;     
+    z-index: 0;  
+}
+
+.section-4-flexbox{
+    display: flex;
+    margin: 0px 250px;
+}
+
+.section-4-flexbox-each{
+    padding: 20px;
+    margin:0px;
+    text-align: center;
+}
+
+.section-4-flexbox-each h4{
+    color: #628478;
+    margin-top: 0; 
+    font-weight: normal;
+}
 
 /* 
 .middleSec{
