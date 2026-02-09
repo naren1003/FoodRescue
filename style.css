@@ -77,7 +77,7 @@ nav ul li a.active {
     text-decoration: none;
     color: black;
     background-color: white;
-    border: 1px solid grey;
+    border: 0px solid grey;
     font-size: medium;
     border-radius: 6px;
 }
@@ -644,13 +644,18 @@ display: flex;
 /* contact page */
 
 .contact-section2{
-    background-color: white;
+    background-color:hsl(40 33% 98%);
     display: flex;
     justify-content: space-around;
 }
 
 .contact-section2 p{
     color: #628478;
+}
+
+.contact-section2 .contact-info{
+    width: 50%;
+    margin-left: 180px;
 }
 
 .contact-section2 .infos{
@@ -668,13 +673,112 @@ display: flex;
     background-color:  #1D86601A;
     padding: 20px;
     border-radius: 20px;
-    height: 30px;
-    width: 30px;
+    height: 15px;
+    width: 15px;
     margin-top: 15px;
 }
 
-.contact-section2 .infos h2,h3,p{
+.contact-section2 .infos h4,h3,p{
     margin: 3px;
     padding: 0;
     font-weight: normal;
 }
+
+.contact-section2 .message{
+    display: flex; 
+    flex-direction: column;
+    width:50%;
+    background-color: white;
+}
+
+.contact-section2 .message .ip1{
+    display: flex;
+    
+}
+
+.contact-section2 .message p{
+    color: black;
+    margin: 15px 0px;
+}
+
+.contact-section2 .message {
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 30px;
+    padding: 30px;
+    box-shadow:  2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+    margin-right: 160px;
+}
+
+.contact-section2 .message .ip1{
+    display: flex;
+    justify-content: space-between;
+}
+.contact-section2 .message .ip1,.ip2,.ip3{
+    margin:20px;
+    margin-bottom: 20px;
+}
+
+.contact-section2 .message input{
+    border:1px solid black;
+    border-radius: 8px;
+    width:100%;
+    padding: 10px;
+    background-color:hsl(40 33% 98%);
+}
+
+.contact-section2 .message input:focus{
+    border:1px solid black;
+    border-radius: 8px;
+    width:100%;
+    padding: 10px;
+    outline: hsl(158 64% 32%);
+}
+
+.contact-section2 textarea{
+    background-color:hsl(40 33% 98%);
+    width: 100%; 
+    height: 100px;
+}
+
+.contact-section2 .message .submit{
+    background-color:  hsl(158 64% 32%);
+    color: white;
+    font-size: medium;
+}
+
+
+/* sign in page */
+.s-body{
+    display: flex;
+}
+
+.section-1-signin{
+    background-color:hsl(158 64% 32%); ;
+    width: 50%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.section-1-signin .logo-signin{
+    margin-left: 40px;
+}
+
+.section-1-signin .welcome{
+    justify-content: left;
+    margin-left: 40px;
+    margin-top: -20px;
+}
+
+.section-1-signin .s-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+

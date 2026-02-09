@@ -34,7 +34,7 @@
             </ul>
         </div>
         <div class="login">
-            <button class="sign-in">Sign-in</button>
+            <button class="sign-in" onclick="location.href='sign_in.html'">Sign-in</button>
             <button class = "get-started">Get Started</button>
         </div>
     </nav>
@@ -61,30 +61,50 @@
         <div class="infos">
             <i class="fa-regular fa-envelope"></i>
             <div>
-                <b><h2>Email Us</h2></b>
-                <h3>naren@gmail.com</h3>
+                <b><h3>Email Us</h3></b>
+                <h4>naren@gmail.com</h4>
                 <p>We respond within 24 hours</p>
             </div>
         </div>
         <div class="infos">
             <i class="fa-solid fa-phone"></i>
             <div>
-                <b><h2>Call Us</h2></b>
-                <h3>1234567890</h3>
+                <b><h3>Call Us</h3></b>
+                <h4>1234567890</h4>
                 <p>Mon-Fri, 9am-6pm</p>
             </div>
         </div>
         <div class="infos">
             <i class="fa-solid  fa-location-dot"></i>
             <div>
-                <b><h2>Visit Us</h2></b>
-                <h3>abc chennai</h3>
+                <b><h3>Visit Us</h3></b>
+                <h4>abc chennai</h4>
                 <p>Tamil nadu, India</p>
             </div>
         </div>
     </div>
     <div class = "message">
-
+        <form>
+            <div class="ip1">
+                <div class="name">
+                    <p><b>Your Name</b></p>
+                    <input type="text" name = "name" placeholder="Your name" required>
+                </div>
+                <div class="name">
+                    <p><b>Email Address</b></p>
+                    <input type="email" name="email" placeholder="YourMail@gmail.com" required>
+                </div>
+            </div>
+            <div class="ip2">
+                <p><b>Subject</b></p>
+                <input type="text" name="subject" placeholder="How can we help you?" required>
+            </div>
+            <div class="ip3">
+                <p><b>Message</b></p>
+                <textarea placeholder="Tell Us more about your inquiry"></textarea>
+            </div>
+            <input type="submit" value="Send Message" class="submit">
+        </form>
     </div>
 </div>
 
@@ -131,3 +151,6 @@
     <hr>
     <p style="font-size: small; color: gray;"> 2026 FoodRescue. All rights reserved. Made with ❤️ for the community.</p>
 </div>
+<script src="script.js"></script>
+</body>
+</html>
