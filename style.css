@@ -779,6 +779,53 @@ display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 60px;
+    margin-left: -60px;
+}
+
+.section-2-signin{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.section-2-signin .sign-in-input{
+    margin:20px;
+}
+
+.section-2-signin .sign-in-input input{
+    border:1px solid black;
+    border-radius: 10px;
+    width:70vh;
+    padding: 10px;
+    background-color:hsl(40 33% 98%);
+}
+
+.section-2-signin .sign-in-input input:focus{
+    border-color: hsl(158 64% 32%);
+    outline: none;
 }
 
 
+.section-2-signin .submit{
+    background-color:  hsl(158 64% 32%);
+    color: white;
+    font-size: medium;
+    width: 100%;
+    padding: 10px 5px;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.section-2-signin a{
+    color: hsl(158 64% 32%);
+    text-decoration: none;
+    line-height: 64px;
+}
+
+.section-2-signin a:hover{
+    text-decoration: underline;
+}
