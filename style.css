@@ -751,6 +751,7 @@ display: flex;
 /* sign in page */
 .s-body{
     display: flex;
+    align-items: stretch;
 }
 
 .section-1-signin{
@@ -760,7 +761,6 @@ display: flex;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100vh;
 }
 
 .section-1-signin .logo-signin{
@@ -828,4 +828,22 @@ display: flex;
 
 .section-2-signin a:hover{
     text-decoration: underline;
+}
+
+.section-2-signin button{
+    margin:20px;
+    padding: 20px 50px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.section-2-signin button i{
+    color: hsl(158 64% 32%);
+    font-size: x-large;
+    margin-bottom: 10px;
+}
+
+.section-2-signin .active{
+    background-color: hsl(153, 39%, 95%);
+    border:3px solid hsl(158 64% 32%);
 }
