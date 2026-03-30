@@ -640,6 +640,116 @@ display: flex;
     font-size: 50px;
 }
 
+.available-order-section,
+.bulk-prebook-section{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px 60px 70px;
+    align-items: stretch;
+}
+
+.available-order-copy,
+.available-order-form-card{
+    background-color: hsl(153, 39%, 95%);
+    border-radius: 18px;
+    padding: 28px;
+    width: 100%;
+}
+
+.available-order-copy p,
+.available-order-form-card p,
+.order-summary-box,
+.bulk-link{
+    color: #628478;
+}
+
+.available-chip{
+    border-radius: 999px;
+    display: inline-flex;
+    padding: 8px 16px;
+    background-color: #1D86601A;
+    color: hsl(158 64% 32%);
+    align-items: center;
+    gap: 10px;
+}
+
+.available-order-points{
+    margin-top: 24px;
+}
+
+.available-order-points p{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 14px 0;
+}
+
+.order-grid{
+    display: flex;
+    gap: 20px;
+}
+
+.order-field{
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.order-field input,
+.order-field select,
+.order-field textarea{
+    border:1px solid black;
+    border-radius: 8px;
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.order-field textarea{
+    min-height: 100px;
+    resize: vertical;
+}
+
+.order-summary-box{
+    background-color: white;
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid #d9e8df;
+    line-height: 1.7;
+}
+
+.order-actions{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+}
+
+.available-order-form-card .submit{
+    background-color: hsl(158 64% 32%);
+    color: white;
+    font-size: medium;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 22px;
+}
+
+.bulk-link{
+    text-decoration: none;
+}
+
+.bulk-link:hover{
+    text-decoration: underline;
+}
+
+.order-feedback{
+    min-height: 24px;
+    font-weight: 600;
+    margin-top: 14px;
+}
+
 
 /* contact page */
 
@@ -846,4 +956,17 @@ display: flex;
 .section-2-signin .active{
     background-color: hsl(153, 39%, 95%);
     border:3px solid hsl(158 64% 32%);
+}
+
+@media (max-width: 900px){
+    .available-order-section,
+    .bulk-prebook-section,
+    .order-grid{
+        flex-direction: column;
+    }
+
+    .order-actions{
+        align-items: flex-start;
+        flex-direction: column;
+    }
 }

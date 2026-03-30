@@ -59,6 +59,57 @@
     <p>No food available right now. Check back later!</p>
 </div>
 
+<div class="available-order-section">
+    <div class="available-order-copy">
+        <p class="available-chip"><i class="fa-solid fa-cart-shopping"></i> Request a meal</p>
+        <h2>Place an Order from Available Donations</h2>
+        <p>Select a listed food source, tell us how many meals you need, and our team can coordinate the pickup or delivery.</p>
+        <div class="available-order-points">
+            <p><i class="fa-solid fa-circle-check"></i> Fast request form</p>
+            <p><i class="fa-solid fa-circle-check"></i> Instant availability summary</p>
+            <p><i class="fa-solid fa-circle-check"></i> Great for NGOs and community drives</p>
+        </div>
+    </div>
+    <div class="available-order-form-card">
+        <form id="available-order-form">
+            <div class="order-grid">
+                <div class="order-field">
+                    <p><b>Food Source</b></p>
+                    <select id="food-source" name="food_source" required>
+                        <option value="">Choose a donation</option>
+                    </select>
+                </div>
+                <div class="order-field">
+                    <p><b>Meals Needed</b></p>
+                    <input type="number" id="meal-count" name="meal_count" min="1" placeholder="Enter meal count" required>
+                </div>
+            </div>
+            <div class="order-grid">
+                <div class="order-field">
+                    <p><b>Organization / Requester</b></p>
+                    <input type="text" id="requester-name" name="requester_name" placeholder="Your NGO or name" required>
+                </div>
+                <div class="order-field">
+                    <p><b>Pickup Time</b></p>
+                    <input type="time" id="pickup-time" name="pickup_time" required>
+                </div>
+            </div>
+            <div class="order-field">
+                <p><b>Notes</b></p>
+                <textarea id="order-notes" name="order_notes" placeholder="Mention urgency, delivery help, or special instructions"></textarea>
+            </div>
+            <div class="order-summary-box" id="order-summary-box">
+                Choose a donation to see availability details.
+            </div>
+            <div class="order-actions">
+                <input type="submit" value="Place Order" class="submit">
+                <a href="bulk_prebook.html" class="bulk-link">Need a large future request? Pre-book a bulk order</a>
+            </div>
+            <p class="order-feedback" id="order-feedback"></p>
+        </form>
+    </div>
+</div>
+
 <!-- footer -->
 <div class="footer">
     <div class = "footer1">
@@ -88,6 +139,7 @@
             <a href="sign_up1.html">Register as Restaurant</a>
             <a href="sign_up.html">Request Food</a>
             <a href="sign_in.html">Donate Food</a>
+            <a href="bulk_prebook.html">Pre-book Bulk Order</a>
             <a href="contact.html">Partner With Us</a>
         </div>
 

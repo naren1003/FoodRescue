@@ -31,6 +31,8 @@ function addName() {
         enhanceFeatureCards();
         enhanceTeamCards();
         buildAvailableFoodExperience();
+        enhanceAvailableOrderForm();
+        enhanceBulkPrebookForm();
     });
 
     function animateImpactStats() {
@@ -241,6 +243,147 @@ function addName() {
                 card.style.transform = "translateY(0)";
                 card.style.boxShadow = "5px 5px rgba(0,0,0,0.1)";
             });
+        });
+    }
+
+    function enhanceAvailableOrderForm() {
+        var form = document.getElementById("available-order-form");
+
+        if (!form) {
+            return;
+        }
+
+        var sourceSelect = document.getElementById("food-source");
+        var mealCount = document.getElementById("meal-count");
+        var summaryBox = document.getElementById("order-summary-box");
+        var feedback = document.getElementById("order-feedback");
+        var storageKey = "foodrescue-available-order";
+
+        donationData.forEach(function (entry, index) {
+            var option = document.createElement("option");
+            option.value = index;
+            option.textContent = entry.donor + " - " + entry.type + " (" + entry.quantity + " meals)";
+            sourceSelect.appendChild(option);
+        });
+
+        restoreDraft(form, storageKey);
+        attachDraftPersistence(form, storageKey);
+
+        function updateSummary() {
+            var selectedEntry = donationData[sourceSelect.value];
+            var mealsNeeded = Number(mealCount.value || 0);
+
+            if (!selectedEntry) {
+                summaryBox.textContent = "Choose a donation to see availability details.";
+                return;
+            }
+
+            var remaining = selectedEntry.quantity - mealsNeeded;
+            var status = remaining >= 0
+                ? "This request can be fulfilled from the currently listed meals."
+                : "This request is larger than the listed quantity. Consider the bulk pre-book page.";
+
+            summaryBox.innerHTML = "<b>" + selectedEntry.donor + "</b> is offering " + selectedEntry.quantity + " " + selectedEntry.type.toLowerCase() + ".<br>Requested: " + (mealsNeeded || 0) + " meals.<br>" + status;
+        }
+
+        sourceSelect.addEventListener("change", updateSummary);
+        mealCount.addEventListener("input", updateSummary);
+        updateSummary();
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            var selectedEntry = donationData[sourceSelect.value];
+            var mealsNeeded = Number(mealCount.value || 0);
+
+            if (!selectedEntry) {
+                feedback.textContent = "Please choose a food source before placing the order.";
+                feedback.style.color = "#d93025";
+                return;
+            }
+
+            if (mealsNeeded < 1) {
+                feedback.textContent = "Please enter a valid meal count.";
+                feedback.style.color = "#d93025";
+                return;
+            }
+
+            if (mealsNeeded > selectedEntry.quantity) {
+                feedback.textContent = "This request is larger than the available stock. Please use the bulk pre-book option.";
+                feedback.style.color = "#d93025";
+                return;
+            }
+
+            feedback.textContent = "Order placed for " + mealsNeeded + " meals from " + selectedEntry.donor + ".";
+            feedback.style.color = "#1d8660";
+            window.localStorage.removeItem(storageKey);
+            form.reset();
+            summaryBox.textContent = "Choose a donation to see availability details.";
+        });
+    }
+
+    function enhanceBulkPrebookForm() {
+        var form = document.getElementById("bulk-prebook-form");
+
+        if (!form) {
+            return;
+        }
+
+        var mealCount = document.getElementById("bulk-meal-count");
+        var dateInput = document.getElementById("bulk-date");
+        var mealType = document.getElementById("bulk-meal-type");
+        var summaryBox = document.getElementById("bulk-summary-box");
+        var feedback = document.getElementById("bulk-feedback");
+        var storageKey = "foodrescue-bulk-prebook";
+        var today = new Date();
+        var minDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1);
+
+        dateInput.min = formatDate(minDate);
+
+        restoreDraft(form, storageKey);
+        attachDraftPersistence(form, storageKey);
+
+        function updateBulkSummary() {
+            var meals = Number(mealCount.value || 0);
+            var selectedDate = dateInput.value;
+            var selectedMealType = mealType.value;
+
+            if (!meals && !selectedDate && !selectedMealType) {
+                summaryBox.textContent = "Fill the form to preview your bulk request plan.";
+                return;
+            }
+
+            summaryBox.innerHTML = "<b>Bulk request preview</b><br>Meals: " + (meals || 0) + "<br>Meal type: " + (selectedMealType || "Not selected") + "<br>Requested date: " + (selectedDate || "Not selected") + "<br>Our team will review donor capacity and contact you for confirmation.";
+        }
+
+        mealCount.addEventListener("input", updateBulkSummary);
+        dateInput.addEventListener("change", updateBulkSummary);
+        mealType.addEventListener("change", updateBulkSummary);
+        updateBulkSummary();
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            var meals = Number(mealCount.value || 0);
+
+            if (meals < 50) {
+                feedback.textContent = "Bulk pre-booking is available for requests of 50 meals or more.";
+                feedback.style.color = "#d93025";
+                return;
+            }
+
+            if (!dateInput.value) {
+                feedback.textContent = "Please select a future date for the request.";
+                feedback.style.color = "#d93025";
+                return;
+            }
+
+            feedback.textContent = "Bulk order pre-booked successfully. Our team will contact you to confirm donor availability.";
+            feedback.style.color = "#1d8660";
+            window.localStorage.removeItem(storageKey);
+            form.reset();
+            dateInput.min = formatDate(minDate);
+            summaryBox.textContent = "Fill the form to preview your bulk request plan.";
         });
     }
 
@@ -715,5 +858,11 @@ function addName() {
         } catch (error) {
             window.localStorage.removeItem(storageKey);
         }
+    }
+
+    function formatDate(date) {
+        var month = String(date.getMonth() + 1).padStart(2, "0");
+        var day = String(date.getDate()).padStart(2, "0");
+        return date.getFullYear() + "-" + month + "-" + day;
     }
 })();
